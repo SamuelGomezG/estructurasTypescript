@@ -98,18 +98,4 @@ var Heap = /** @class */ (function () {
     return Heap;
 }());
 exports.Heap = Heap;
-var main = function () {
-    var h = new Heap();
-    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-    arr.forEach(function (value) {
-        h.insert(value);
-    });
-    console.log("" + h);
-    h.remove(3);
-    console.log("" + h);
-    h.changePriority(7, 20);
-    console.log("" + h);
-};
-console.time('main');
-main();
-console.timeEnd('main');
+
