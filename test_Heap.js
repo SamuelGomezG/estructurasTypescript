@@ -1,6 +1,6 @@
 var fs = require("fs")
 
-var heap = require("./")
+var heap = require("./pruebaHeap.js")
 
 const average = (arr) => {
     let s = 0
