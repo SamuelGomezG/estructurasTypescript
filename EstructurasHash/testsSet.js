@@ -78,9 +78,30 @@ const search1M = () => {
     }
 }
 
+const something = () => {
+    let s = new set.HashSet()
+    let arr = []
+    for (let i = 1; i <= 1000000; i++) {
+        arr.push(i)
+        s.add(i)
+        if (i == 100 || i % 500 == 0) {
+            let av = 0
+            for (let j = 0; j < 100; j++) {
+                let randomN = Math.floor(Math.random() * i)
+                let randomElement = arr[randomN]
+                let start = performance.now()
+                let searchResult = s.find(randomElement)
+                let finish = performance.now()
+                let time = finish - start
+                av += time*0.01
+            }
+            fs.appendFileSync("./busquedaSet.csv", i + "," + av + "\n")
+        }
+    }
+}
+
 const testSearch = () => {
-    search100()
-    search1M()
+    something()
 }
 
 testSearch()
